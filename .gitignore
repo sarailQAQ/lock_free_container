@@ -1,0 +1,9 @@
+*.exe
+
+cmake-build-debug
+
+.DS_Store
+
+*.out
+
+.idea
