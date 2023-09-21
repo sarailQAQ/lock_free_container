@@ -1,4 +1,0 @@
-/home/sarail/Projects/lock_free_container/build/CMakeFiles/skiplist.h.dir
-/home/sarail/Projects/lock_free_container/build/CMakeFiles/lock_free_container.dir
-/home/sarail/Projects/lock_free_container/build/CMakeFiles/edit_cache.dir
-/home/sarail/Projects/lock_free_container/build/CMakeFiles/rebuild_cache.dir
