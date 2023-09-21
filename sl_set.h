@@ -196,6 +196,10 @@ public:
         return iterator(&slist, cursor);
     }
 
+    int count(const K &key) {
+        return find(key) == end() ? 0 : 1;
+    }
+
     virtual
     iterator erase(iterator &position) {
         skiplist_node *cursor = position.cursor;
@@ -328,7 +332,7 @@ private:
             }
 
             std::this_thread::yield();
-//            execGc();
+            execGc();
         } while (true);
     }
 

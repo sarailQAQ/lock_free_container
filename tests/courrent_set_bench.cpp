@@ -1,7 +1,7 @@
 //
 // Created by sarail on 9/19/23.
 //
-#include "../atomic_set.h"
+#include "../courrent_set.h"
 
 
 #include "atomic"
@@ -18,7 +18,7 @@ inline int key_gen() {
     return int (random() % 100000ll);
 }
 
-void rand_write(int round, atomic_set<int>& set) {
+void rand_write(int round, courrent_set<int>& set) {
     int n = round;
     auto start = std::chrono::system_clock::now();
     while (round--) {
@@ -31,7 +31,7 @@ void rand_write(int round, atomic_set<int>& set) {
     std::cout << "write op: " << 1000 * time_use / double(n) << " μs/op\n";
 }
 
-void rand_read(int round,  atomic_set<int>& set) {
+void rand_read(int round,  courrent_set<int>& set) {
     int n = round;
 
     auto start = std::chrono::system_clock::now();
@@ -47,11 +47,11 @@ void rand_read(int round,  atomic_set<int>& set) {
 
 
 int main() {
-    std::cout << "atomic_set bench\n";
+    std::cout << "courrent_set bench\n";
     srand(time(nullptr));
 
 
-    atomic_set<int> set;
+    courrent_set<int> set;
 
     int n = 500000, write_thread = 2, read_thread = 8;
     auto start = std::chrono::system_clock::now();

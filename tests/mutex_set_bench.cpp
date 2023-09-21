@@ -56,7 +56,7 @@ int main() {
 
     std::unordered_multiset<int> st;
 
-    int n = 500000, write_thread = 2, read_thread = 8;
+    int n = 500000, write_thread = 2, read_thread = 0;
     auto start = std::chrono::system_clock::now();
 
     std::vector<std::thread> threads;

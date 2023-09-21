@@ -20,7 +20,7 @@ struct Node {
 };
 
 template <typename T, typename Hash = std::hash<T>>
-class atomic_set {
+class courrent_set {
 private:
     std::vector<std::atomic<Node<T>*>> buckets;
 

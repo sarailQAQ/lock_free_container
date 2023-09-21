@@ -53,10 +53,13 @@ int main() {
 
      sl_set<int> slist;
 
-    int n = 500000, write_thread = 2, read_thread = 8;
-    auto start = std::chrono::system_clock::now();
+    int n = 500000, write_thread = 1, read_thread = 8;
 
     std::vector<std::thread> threads;
+    std::thread w_init(rand_write, n, std::ref(slist));
+    w_init.join();
+
+    auto start = std::chrono::system_clock::now();
 
     for (int i = 0; i < write_thread; i++) {
         std::thread w(rand_write, n, std::ref(slist));
